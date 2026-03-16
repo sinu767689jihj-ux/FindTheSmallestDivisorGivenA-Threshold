@@ -1,0 +1,29 @@
+class ThresholdDivisorSearch{
+    public static boolean isPossible(int[] nums,int threshold,int k){
+        for(int i=0;i<nums.length;i++){
+            int upper=nums[i]/k;
+            if(nums[i]%k!=0){
+                upper++;
+            }
+            threshold-=upper;
+        }
+        if(threshold<0){
+            System.out.println(threshold);
+            return false;
+        }
+            System.out.println(threshold);
+            return true;
+    }
+    public static void main(String[] args){
+        int[] nums={1,2,5,9};
+        int threshold=6;
+        System.out.println(isPossible(nums,threshold,2));
+        System.out.println(isPossible(nums,threshold,3));
+        System.out.println(isPossible(nums,threshold,4));
+        System.out.println(isPossible(nums,threshold,5));
+        System.out.println(isPossible(nums,threshold,6));
+        System.out.println(isPossible(nums,threshold,7));
+        System.out.println(isPossible(nums,threshold,8));
+        System.out.println(isPossible(nums,threshold,9));
+    }
+}
